@@ -1,0 +1,25 @@
+<table class="table datagrid" id="js-comments-list">
+    <thead>
+    <tr>
+{#        <th class="text-left" dir="ltr"><a>ID</a></th>#}
+        <th class="text-left" dir="ltr"><a>{{ 'comments.created_at'|trans([], 'admin') }}</a></th>
+        <th class="text-left" dir="ltr"><a>{{ 'comments.author'|trans([], 'admin') }}</a></th>
+        <th class="text-left" dir="ltr"><a>{{ 'comments.content'|trans([], 'admin') }}</a></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for comment in comments %}
+        <tr data-id="{{ comment.id }}">
+{#            <td class="text-left" dir="ltr">{{ comment.id }}</td>#}
+            <td class="text-left" dir="ltr">{{ comment.createdAt|date('d/m/Y H:i:s') }}</td>
+            <td class="text-left" dir="ltr">
+                {% if comment.author %}
+                    <code>{{ comment.author }}</code>
+                {% else %}{% endif %}
+            </td>
+            <td class="text-left" dir="ltr">{{ comment.content }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

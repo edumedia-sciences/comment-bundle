@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="field-form_panel">
+        <div class="form-panel">
+            <div class="form-panel-header">
+                <div class="form-panel-title"><a>{{ 'comments.crud_title'|trans([], 'admin') }}</a></div>
+            </div>
+            <div class="form-panel-body">
+                {% set pathParams = {'resourceType': entity.instance.commentableType, 'resourceId': entity.instance.commentableId} %}
+                {% include '@eduMediaComment/admin/comments/form.html.twig' %}
+                {{ render(path('edumedia_comment_admin_list', pathParams)) }}
+            </div>
+        </div>
+    </div>
+</div>

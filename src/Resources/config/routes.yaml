@@ -1,0 +1,6 @@
+edumedia_comment_admin_create:
+  path: '/{resourceType}/{resourceId}/create'
+  controller: 'eduMedia\CommentBundle\Controller\Admin\CommentController::create'
+edumedia_comment_admin_list:
+  path: '/{resourceType}/{resourceId}/list'
+  controller: 'eduMedia\CommentBundle\Controller\Admin\CommentController::list'

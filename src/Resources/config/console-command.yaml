@@ -1,0 +1,6 @@
+services:
+  _defaults:
+    autowire: true
+  eduMedia\CommentBundle\Command\:
+    resource: '../../Command/'
+    tags: [ console.command ]

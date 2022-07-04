@@ -1,0 +1,9 @@
+services:
+  _defaults:
+    autowire: true
+  eduMedia\CommentBundle\Service\CommentService:
+    public: true
+  eduMedia\CommentBundle\EventListener\CommentListener:
+    tags: [ { name: 'doctrine.event_listener', event: 'preRemove' } ]
+  eduMedia\CommentBundle\Controller\Admin\CommentController:
+    autoconfigure: true

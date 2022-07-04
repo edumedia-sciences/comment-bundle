@@ -1,0 +1,26 @@
+<form method="post" action="{{ path('edumedia_comment_admin_create', pathParams) }}" id="js-comment-form">
+    <div class="col-md-9 col-xxl-7">
+        <div class="field-textarea form-group">
+            <label for="comment-content" class="form-control-label">{{ 'comments.add'|trans([], 'admin') }}</label>
+            <div class="form-widget">
+                <textarea id="comment-content" name="content" data-ea-align="left" rows="5" data-ea-textarea-field="data-ea-textarea-field" class="form-control"></textarea>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">
+        <span class="btn-label"><span class="action-label">{{ 'comments.submit'|trans([], 'admin') }}</span></span>
+    </button>
+</form>
+<script>
+    let $commentForm = document.getElementById('js-comment-form');
+    $commentForm.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch($commentForm.action, {method: 'post', body: new FormData($commentForm)})
+            .then(response => {
+                $commentForm.reset()
+                response.text().then(text => {
+                    document.getElementById('js-comments-list').outerHTML = text
+                })
+            })
+    })
+</script>
