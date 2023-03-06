@@ -7,8 +7,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 interface CommentInterface
 {
-    public function __construct(string $content);
-
     public function getId();
 
     public function getContent(): ?string;

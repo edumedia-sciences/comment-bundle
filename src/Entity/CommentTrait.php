@@ -30,11 +30,6 @@ trait CommentTrait
     #[ORM\JoinColumn(onDelete: 'SET NULL')]
     private ?UserInterface $author = null;
 
-    public function __construct(string $content)
-    {
-        $this->setCreatedAt(new DateTime())->setContent($content);
-    }
-
     public function getId()
     {
         return $this->id;
