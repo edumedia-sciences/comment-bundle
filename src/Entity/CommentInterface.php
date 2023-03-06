@@ -11,7 +11,11 @@ interface CommentInterface
 
     public function getContent(): ?string;
 
+    public function setContent(string $content): self;
+
     public function getCreatedAt(): ?DateTimeInterface;
+
+    public function setCreatedAt(DateTimeInterface $createdAt): self;
 
     public function getResourceType(): ?string;
 
