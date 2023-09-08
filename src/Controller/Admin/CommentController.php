@@ -3,9 +3,9 @@
 namespace eduMedia\CommentBundle\Controller\Admin;
 
 use eduMedia\CommentBundle\Service\CommentService;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bridge\Twig\Attribute\Template;
 
 class CommentController extends AbstractController
 {
