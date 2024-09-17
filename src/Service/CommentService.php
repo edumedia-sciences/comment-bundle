@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityManagerInterface;
 use eduMedia\CommentBundle\Entity\CommentableInterface;
 use eduMedia\CommentBundle\Entity\CommentInterface;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Bundle\SecurityBundle\Security;
 
 class CommentService
 {
