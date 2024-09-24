@@ -2,19 +2,19 @@
 
 namespace eduMedia\CommentBundle\EventListener;
 
-use Doctrine\ORM\Event\LifecycleEventArgs;
+use Doctrine\ORM\Event\PreRemoveEventArgs;
 use eduMedia\CommentBundle\Entity\CommentableInterface;
 use eduMedia\CommentBundle\Service\CommentService;
 
-class CommentListener
+readonly class CommentListener
 {
     public function __construct(private CommentService $commentService)
     {
     }
 
-    public function preRemove(LifecycleEventArgs $args): void
+    public function preRemove(PreRemoveEventArgs $args): void
     {
-        if (($resource = $args->getEntity()) and $resource instanceof CommentableInterface) {
+        if (($resource = $args->getObject()) and $resource instanceof CommentableInterface) {
             $this->commentService->deleteAllComments($resource);
         }
     }
