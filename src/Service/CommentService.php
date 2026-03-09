@@ -2,7 +2,7 @@
 
 namespace eduMedia\CommentBundle\Service;
 
-use DateTimeImmutable;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityManagerInterface;
@@ -27,7 +27,7 @@ class CommentService
         /** @var CommentInterface $comment */
         $comment = new $this->commentClass();
 
-        return ($comment)->setCreatedAt(new DateTimeImmutable())->setContent($content);
+        return ($comment)->setCreatedAt(new DateTime())->setContent($content);
     }
 
     public function getComments(CommentableInterface $resource, bool $autoload = false): Collection
